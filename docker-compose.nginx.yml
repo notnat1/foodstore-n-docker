@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  # Nginx service
+  nginx:
+    image: nginx:alpine
+    container_name: container-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php-fpm
+      - mysql
+    networks:
+      - food-store-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  # PHP-FPM service
+  php-fpm:
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    container_name: container-php-fpm
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - food-store-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  # Node.js service
+  nodejs:
+    build:
+      context: .
+      dockerfile: node.Dockerfile
+    container_name: container-nodejs
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - food-store-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  # MySQL service
+  mysql:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    container_name: container-mysql
+    restart: always
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    environment:
+      MYSQL_DATABASE: db_food_store
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - food-store-network
+
+networks:
+  food-store-network:
+    driver: bridge
+
+volumes:
+  mysql-data:

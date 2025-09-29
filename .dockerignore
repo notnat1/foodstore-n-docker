@@ -1,0 +1,38 @@
+# Jangan ikut node_modules lokal
+node_modules/
+
+# Hasil build Vite
+dist/
+build/
+
+# File environment (pastikan file .env utama tidak ikut)
+.env
+.env.local
+.env.*.local
+
+# Sistem kontrol versi & metadata proyek
+.git/
+.gitignore
+.gitattributes
+README.md
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+*.log
+
+# Docker
+docker-compose.yml
+*.Dockerfile
+.dockerignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# (Jika ada folder coverage atau laporan lain)
+coverage/
