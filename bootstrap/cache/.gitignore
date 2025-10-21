@@ -1,2 +1,7 @@
 *
 !.gitignore
+
+# Abaikan semua file .env
+.env
+.env.*
+*.env
