@@ -11,7 +11,7 @@ Food Store, Eat Your Favorite Foods
 @stop
 
 @section('image')
-{{ asset('/storage/' . $product->image) }}
+{{ imageUrl('uploads/' . $product->image) }}
 @stop
 
 <div class="container" style="margin-bottom: 200px;">
@@ -78,7 +78,7 @@ Food Store, Eat Your Favorite Foods
 
                             <!-- Customer Info -->
                             <figure class="d-flex align-items-center m-0 p-0">
-                                <img class="img-fluid rounded-circle m-0 border border-3" width="50" loading="lazy" src="{{ asset('/storage/avatars/' . $rating->customer->image) }}" alt="{{ $rating->customer->name }}">
+                                <img class="img-fluid rounded-circle m-0 border border-3" width="50" loading="lazy" src="{{ imageUrl('uploads/avatars/' . $rating->customer->image) }}" alt="{{ $rating->customer->name }}">
                                 <figcaption class="ms-2 mt-1">
                                     <h6 class="mb-1">{{ $rating->customer->name }}</h6>
                                 </figcaption>

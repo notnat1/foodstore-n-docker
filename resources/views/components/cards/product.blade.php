@@ -2,7 +2,7 @@
     <div class="row g-0">
         <div class="col-5 col-md-4">
             <a href="/products/{{ $product->slug }}" class="text-decoration-none" wire:navigate>
-                <img src="{{ asset('/storage/' . $product->image) }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="...">
+                <img src="{{ imageUrl('uploads/' . $product->image) }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="...">
             </a>
         </div>
         <div class="col-7 col-md-8">

@@ -11,7 +11,7 @@ Food Store - Eat Your Favorite Foods
 @stop
 
 @section('image')
-{{ asset('/storage/' . $category->image) }}
+{{ imageUrl('uploads/' . $category->image) }}
 @stop
 
 <div class="container" style="margin-bottom: 150px">

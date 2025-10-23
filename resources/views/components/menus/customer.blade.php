@@ -2,8 +2,8 @@
     <div class="d-flex justify-content-between">
         <div>
             @php
-                $image = auth()->guard('customer')->user()->image 
-                    ? asset('/storage/avatars/' . auth()->guard('customer')->user()->image) 
+                $image = auth()->guard('customer')->user()->image
+                    ? imageUrl('uploads/avatars/' . auth()->guard('customer')->user()->image)
                     : 'https://cdn.jsdelivr.net/gh/SantriKoding-com/assets-food-store/images/user.png';
             @endphp
             <img src="{{ $image }}" class="object-fit-cover rounded-circle" height="45" />

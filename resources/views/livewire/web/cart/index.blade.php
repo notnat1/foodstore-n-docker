@@ -34,7 +34,7 @@ Food Store - Eat Your Favorite Foods
                             <div class="card rounded border-0 shadow-sm">
                                 <div class="row g-0">
                                     <div class="col-5 col-md-4">
-                                        <img src="{{ asset('/storage/' . $cart->product->image) }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start">
+                                        <img src="{{ imageUrl('uploads/' . $cart->product->image) }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start">
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body">
@@ -43,7 +43,7 @@ Food Store - Eat Your Favorite Foods
                                                     <h6 class="card-title">{{ $cart->product->title }}</h6>
                                                 </div>
                                                 <div class="text-end">
-                                                    
+
                                                     <!-- btn delete -->
                                                     <livewire:web.cart.btn-delete :cart_id="$cart->id" />
 
@@ -55,13 +55,13 @@ Food Store - Eat Your Favorite Foods
                                                 </div>
                                                 <div class="text-end">
                                                     <div class="input-group justify-content-center align-items-center group-btn-qty">
-                                                        
+
                                                         <!-- decrement qty -->
                                                         <livewire:web.cart.btn-decrement :cart_id="$cart->id" :product_id="$cart->product_id" :disabled="$cart->qty" />
 
                                                         <!-- qty cart -->
                                                         <input type="number" step="1" max="10" value="{{ $cart->qty }}" name="quantity" class="quantity-field border-0 text-center w-25" style="background: transparent;">
-                                                        
+
                                                         <!-- increment qty -->
                                                         <livewire:web.cart.btn-increment :cart_id="$cart->id" :product_id="$cart->product_id" />
 

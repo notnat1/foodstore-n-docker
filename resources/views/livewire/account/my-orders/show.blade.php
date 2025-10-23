@@ -104,7 +104,7 @@
                             <div class="card rounded border">
                                 <div class="row g-0">
                                     <div class="col-5 col-md-4">
-                                        <img src="{{ asset('/storage/' . $item->product->image) }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start">
+                                        <img src="{{ imageUrl('uploads/' . $item->product->image) }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start">
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body">

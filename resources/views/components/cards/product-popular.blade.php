@@ -1,6 +1,6 @@
 <div class="col-8 col-md-6 mb-4">
     <div class="card border-0 rounded shadow-sm">
-        <img src="{{ asset('/storage/' . $product->image) }}" class="rounded-top-custom object-fit-cover" height="200px">
+        <img src="{{ imageUrl('uploads/' . $product->image) }}" class="rounded-top-custom object-fit-cover" height="200px">
         <div class="card-body">
             <a href="/products/{{ $product->slug }}" class="text-decoration-none text-dark" wire:navigate>
                 <h6 class="card-title">{{ $product->title }}</h6>
