@@ -5,7 +5,7 @@
                 <div class="text-center">
                     <form action="/products" method="GET">
                         <div class="input-group mb-3 rounded">
-                            <input type="text" name="search" class="form-control form-control-lg rounded shadow-sm border-0" placeholder="cari jo pa benya..." aria-label="Example text with button addon" aria-describedby="button-addon1" />
+                            <input type="text" name="search" class="form-control form-control-lg rounded shadow-sm border-0" placeholder="cari jo..." aria-label="Example text with button addon" aria-describedby="button-addon1" />
                         </div>
                     </form>
                 </div>
