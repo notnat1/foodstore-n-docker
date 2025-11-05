@@ -11,6 +11,7 @@
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "league/flysystem-aws-s3-v3": "^3.30",
         "livewire/livewire": "3.5.12",
         "midtrans/midtrans-php": "^2.6"
     },
@@ -28,7 +29,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+        "app/helpers.php"
+    ]
     },
     "autoload-dev": {
         "psr-4": {
